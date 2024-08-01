@@ -1,0 +1,20 @@
+package com.farm_collector.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "planted")
+public class Harvested {
+	
+	@Column(name = "season_id")
+	private int season;
+	@Column(name = "crop_id")
+	private int crop;
+	@Column(name = "planting_area")
+	private Float plantingArea;
+	@Column(name = "expected_product_tons")
+	private Float expProdInTons;
+
+}

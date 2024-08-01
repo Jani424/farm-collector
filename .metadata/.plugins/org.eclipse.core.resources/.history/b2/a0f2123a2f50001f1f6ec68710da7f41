@@ -1,0 +1,22 @@
+package com.farm_collector.service;
+
+import com.farm_collector.dto.PlantedRequest;
+import com.farm_collector.model.Planted;
+
+import jakarta.transaction.Transactional;
+
+public class PlantedServiceImpl implements PlantedService{
+
+	@Override
+	@Transactional
+	public void save(PlantedRequest request) {
+		
+		Planted plantObj = new Planted();
+		plantObj.setExpProdInTons(request.getExpProdInTons());
+		plantObj.setCrop(request.getCrop());
+		plantObj.setPlantingArea(request.getPlantingArea());
+		plantObj.setSeason(request.getSeason());
+		
+	}
+
+}

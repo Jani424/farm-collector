@@ -1,0 +1,13 @@
+package com.farm_collector.dto;
+
+public class FarmWiseResponse {
+	
+	private Integer farm_id;
+	private Integer crop_id;
+	private Integer season_id;
+	private Float total_expected;
+	private Float total_actual;
+	
+	
+
+}

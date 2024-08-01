@@ -1,0 +1,42 @@
+package com.farm_collector.dto;
+
+public class HarvestedRequest {
+
+	private Integer farmId;
+	private Integer season;
+	private Integer crop;
+	private Float plantingArea;
+	private Float actualProdInTons;
+	public Integer getFarmId() {
+		return farmId;
+	}
+	public void setFarmId(Integer farmId) {
+		this.farmId = farmId;
+	}
+	public Integer getSeason() {
+		return season;
+	}
+	public void setSeason(Integer season) {
+		this.season = season;
+	}
+	public Integer getCrop() {
+		return crop;
+	}
+	public void setCrop(Integer crop) {
+		this.crop = crop;
+	}
+	public Float getPlantingArea() {
+		return plantingArea;
+	}
+	public void setPlantingArea(Float plantingArea) {
+		this.plantingArea = plantingArea;
+	}
+	public Float getActualProdInTons() {
+		return actualProdInTons;
+	}
+	public void setActualProdInTons(Float actualProdInTons) {
+		this.actualProdInTons = actualProdInTons;
+	}
+	
+	
+}

@@ -1,0 +1,31 @@
+package com.farm_collector.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.farm_collector.dto.PlantedRequest;
+import com.farm_collector.service.PlantedService;
+
+@RestController
+@RequestMapping("/api/v1")
+public class PlantedController {
+	
+	@Autowired
+	PlantedService service;
+	
+	@PostMapping("/savePlantedCrop")
+	public String savePlanted(@RequestBody PlantedRequest request) {
+		String postResult = "";
+		try {
+			postResult = service.save(request);
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return postResult;
+	}
+
+}

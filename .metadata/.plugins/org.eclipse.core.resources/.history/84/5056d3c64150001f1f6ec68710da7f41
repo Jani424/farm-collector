@@ -1,0 +1,62 @@
+package com.farm_collector;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.MediaType;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import com.farm_collector.controller.ReportsController;
+import com.farm_collector.dto.CropWiseResponse;
+import com.farm_collector.dto.FarmWiseResponse;
+import com.farm_collector.repo.PlantedRepository;
+import com.farm_collector.service.ReportsService;
+
+@ExtendWith(MockitoExtension.class)
+public class ResponseControllerTest {
+
+	private MockMvc mockMvc;
+	
+	@InjectMocks
+	ReportsController controller;
+	
+	@Mock
+	ReportsService service;
+	
+	@Mock
+	PlantedRepository repo;
+	
+	@Test
+    public void testGetFarmDetails() throws Exception {
+        FarmWiseResponse response = new FarmWiseResponse(2, 4, 1);
+        List<FarmWiseResponse> responseList = new ArrayList<>();
+        responseList.add(response);
+        when(service.getFarmWiseDetails(any())).thenReturn(responseList);
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("api/v1/getFarmWiseDetails/1").accept(MediaType.APPLICATION_JSON)).andReturn();
+
+        assertEquals(200, mvcResult.getResponse().getStatus());
+    }
+	
+	@Test
+    public void testGetCropDetails() throws Exception {
+        CropWiseResponse response = new CropWiseResponse(2, 4);
+        List<FarmWiseResponse> responseList = new ArrayList<>();
+        responseList.add(response);
+        when(service.getFarmWiseDetails(any())).thenReturn(responseList);
+        MvcResult mvcResult = mockMvc.perform(MockMvcRequestBuilders.get("api/v1/getFarmWiseDetails/1").accept(MediaType.APPLICATION_JSON)).andReturn();
+
+        assertEquals(200, mvcResult.getResponse().getStatus());
+    }
+}
+

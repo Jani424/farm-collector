@@ -1,0 +1,21 @@
+package com.farm_collector.controller;
+
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.farm_collector.dto.PlantedRequest;
+
+@RestController
+@RequestMapping("/api/v1")
+public class PlantedController {
+	
+	
+	public String savePlanted(@RequestBody PlantedRequest request) {
+	
+		
+		
+		return "Planted Save Sucess";
+	}
+
+}

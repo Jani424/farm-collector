@@ -1,0 +1,21 @@
+package com.farm_collector.service;
+
+import org.springframework.stereotype.Service;
+
+import com.farm_collector.dto.HarvestedRequest;
+import com.farm_collector.model.Harvested;
+
+import jakarta.transaction.Transactional;
+
+@Service
+@Transactional
+public class HarvestedServiceImpl implements HarvestedService {
+
+	@Override
+	public void save(HarvestedRequest request) {
+		Harvested harvestedObj = new Harvested();
+		
+		
+	}
+
+}

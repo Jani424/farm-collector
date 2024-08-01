@@ -1,0 +1,10 @@
+package com.farm_collector.model;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "planted")
+public class Harvested {
+
+}

@@ -1,0 +1,14 @@
+package com.farm_collector.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class PlantedRequest {
+
+	private Integer season;
+	private Integer crop;
+	private Float plantingArea;
+	private Float expProdInTons;
+}

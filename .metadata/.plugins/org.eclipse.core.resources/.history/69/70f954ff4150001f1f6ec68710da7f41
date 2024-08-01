@@ -1,0 +1,20 @@
+package com.farm_collector;
+
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.web.servlet.MockMvc;
+
+import com.farm_collector.service.PlantedService;
+
+@ExtendWith(MockitoExtension.class)
+public class PlantedControllerTest {
+
+	private MockMvc mockMvc;
+
+
+    @Autowired
+    private PlantedService service;
+    
+    
+}

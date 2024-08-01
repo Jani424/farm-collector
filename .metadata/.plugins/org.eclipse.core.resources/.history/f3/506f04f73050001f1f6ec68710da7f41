@@ -1,0 +1,31 @@
+package com.farm_collector.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.farm_collector.dto.PlantedRequest;
+import com.farm_collector.model.Planted;
+import com.farm_collector.repo.PlantedRepository;
+
+import jakarta.transaction.Transactional;
+
+@Service
+public class PlantedServiceImpl implements PlantedService{
+
+	@Autowired
+	PlantedRepository repo;
+	
+	@Override
+	@Transactional
+	public void save(PlantedRequest request) {
+		
+		Planted plantObj = new Planted();
+		plantObj.setExpProdInTons(request.getExpProdInTons());
+		plantObj.setCrop(request.getCrop());
+		plantObj.setPlantingArea(request.getPlantingArea());
+		plantObj.setSeason(request.getSeason());
+		
+		repo.save(plantObj);
+	}
+
+}

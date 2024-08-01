@@ -1,0 +1,16 @@
+package com.farm_collector.service;
+
+import com.farm_collector.dto.PlantedRequest;
+
+import jakarta.transaction.Transactional;
+
+public class PlantedServiceImpl implements PlantedService{
+
+	@Override
+	@Transactional
+	public void save(PlantedRequest request) {
+		
+		
+	}
+
+}

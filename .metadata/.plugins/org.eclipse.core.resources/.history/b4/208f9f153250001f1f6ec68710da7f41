@@ -1,0 +1,5 @@
+package com.farm_collector.service;
+
+public class HarvestedServiceImpl {
+
+}

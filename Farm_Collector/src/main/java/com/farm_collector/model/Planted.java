@@ -1,0 +1,67 @@
+package com.farm_collector.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "planted")
+public class Planted {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer planted_id;
+	
+	@Column(name = "farm_id")
+	private Integer farmId;
+	@Column(name = "season_id")
+	private Integer season;
+	@Column(name = "crop_id")
+	private Integer crop;
+	@Column(name = "planting_area")
+	private Float plantingArea;
+	@Column(name = "expected_product_tons")
+	private Float expProdInTons;
+	
+	
+	public Integer getPlanted_id() {
+		return planted_id;
+	}
+	public void setPlanted_id(Integer planted_id) {
+		this.planted_id = planted_id;
+	}
+	public Integer getSeason() {
+		return season;
+	}
+	public void setSeason(Integer season) {
+		this.season = season;
+	}
+	public Integer getCrop() {
+		return crop;
+	}
+	public void setCrop(Integer crop) {
+		this.crop = crop;
+	}
+	public Float getPlantingArea() {
+		return plantingArea;
+	}
+	public void setPlantingArea(Float plantingArea) {
+		this.plantingArea = plantingArea;
+	}
+	public Float getExpProdInTons() {
+		return expProdInTons;
+	}
+	public void setExpProdInTons(Float expProdInTons) {
+		this.expProdInTons = expProdInTons;
+	}
+	public Integer getFarmId() {
+		return farmId;
+	}
+	public void setFarmId(Integer farmId) {
+		this.farmId = farmId;
+	}
+	
+}

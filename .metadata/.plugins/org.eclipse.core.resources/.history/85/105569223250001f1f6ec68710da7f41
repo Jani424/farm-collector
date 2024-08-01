@@ -1,0 +1,9 @@
+package com.farm_collector.service;
+
+import com.farm_collector.dto.HarvestedRequest;
+
+public interface HarvestedService {
+
+	void save(HarvestedRequest request);
+
+}
